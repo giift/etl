@@ -1,0 +1,12 @@
+#composer stuff
+vendor
+composer.lock
+composer.phar
+
+#build stuff
+cache.properties
+build/cache
+build/docs
+build/pdepend
+build/logs
+build/coverage

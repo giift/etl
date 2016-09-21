@@ -1,0 +1,37 @@
+{
+    "name": "giift/etl",
+    "type": "library",
+    "authors": [
+        {
+            "name": "Nicolas Lagier",
+            "email": "nicolas.lagier@giift.com"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "Giift\\Etl\\": "src/"
+        }
+    },
+    "repositories": [
+        {
+            "packagist": false
+        },
+        {
+            "type": "composer",
+            "url": "http://52.221.245.130"
+        }
+    ],
+    "require": {
+        "monolog/monolog":"~1.5"
+    },
+    "require-dev":{
+        "phpunit/phpunit": "4.8.*",
+        "phploc/phploc": "*",
+        "pdepend/pdepend" : "2.0.4",
+        "phpmd/phpmd" : "@stable",
+        "sebastian/phpcpd": "*",
+        "squizlabs/php_codesniffer":"2.*",
+        "nikic/php-parser": "1.0",
+        "sami/sami": "3.2.*"
+    }
+}
