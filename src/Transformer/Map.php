@@ -38,7 +38,7 @@ class Map extends \Giift\Etl\Node
         $map_count = count($this->map);
         $data_count = count($record);
         $data = array();
-        if ($data_count == $map_count) {
+        if ($data_count === $map_count && $data_count > 0) {
             $data = array_combine($this->map, $record);
         }
 
