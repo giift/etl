@@ -72,7 +72,7 @@ class Csv extends \Giift\Etl\Node
         $res_array = array();
         //read the file
         $row = 0;
-        while ($data = fgetcsv($file, '', ",")) {
+        while ($data = fgetcsv($file, 0, ",")) {
         //set header row
             if ($this->header_line >= 0 && $row == $this->header_line) {
                 $header = $data;

@@ -15,6 +15,7 @@
     "repositories": [
     ],
     "require": {
+        "php": ">= 5.3.29",
         "monolog/monolog":"~1.5"
     },
     "require-dev":{
