@@ -13,13 +13,6 @@
         }
     },
     "repositories": [
-        {
-            "packagist": false
-        },
-        {
-            "type": "composer",
-            "url": "http://52.221.245.130"
-        }
     ],
     "require": {
         "monolog/monolog":"~1.5"
