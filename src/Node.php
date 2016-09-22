@@ -61,6 +61,21 @@ abstract class Node
     }
 
     /**
+     * Declare the implementation of a node. This implementation does not have to be in the giift/etl package. And this
+     * implementation can replace an existing one.
+     * @param string $class
+     * @param string $type
+     * @param string $class_name 
+     */
+    public static function registerNode($class, $type, $class_name)
+    {
+        if (!isset(self::$nodesCatalog_[$class])) {
+            self::$nodesCatalog_[$class] = array();
+        }
+        self::$nodesCatalog_[$class][$type] = $class_name;
+    }
+
+    /**
      * Function process record
      *
      * @param array $record
