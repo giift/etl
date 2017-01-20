@@ -40,7 +40,7 @@ abstract class Node
 
     /**
      * Constructor
-     * @param object $config
+     * @param array $config Fields array from config.
      */
     public function __construct(array $config = array())
     {
@@ -49,6 +49,9 @@ abstract class Node
 
     /**
      * Build a node from its class, its type and its config
+     * @param string $class  Class of the node (extractor, loader, transformer).
+     * @param string $type   Type of the node.
+     * @param array  $config Node specific configuration.
      * @return \Giift\Etl\Node
      */
     public static function forge($class, $type, array $config = array())
@@ -63,9 +66,10 @@ abstract class Node
     /**
      * Declare the implementation of a node. This implementation does not have to be in the giift/etl package. And this
      * implementation can replace an existing one.
-     * @param string $class
-     * @param string $type
-     * @param string $class_name 
+     * @param string $class      Class of the node (extractor, loader, transformer).
+     * @param string $type       Type of the node.
+     * @param string $class_name Full class name including namespace. Used to initialize instances.
+     * @return void
      */
     public static function registerNode($class, $type, $class_name)
     {
@@ -78,14 +82,16 @@ abstract class Node
     /**
      * Function process record
      *
-     * @param array $record
+     * @param array $record Typically represents one line of the input dataset.
+     * @return string
      */
     abstract public function processRecord(array $record);
 
     /**
      * Add node to output
      *
-     * @param object $node
+     * @param \Giift\Etl\Node $node Node to be added after this node.
+     * @return void
      */
     public function addOutput(\Giift\Etl\Node &$node)
     {
@@ -103,7 +109,10 @@ abstract class Node
     /**
      * Send record to next step
      *
-     * @param array $record
+     * @param array  $record  Typically represents one line of the input dataset.
+     * @param string $node_id If left null, record will be sent to all registered output, else the record will be sent
+     *                        only to the output node with the specifc id.
+     * @return string
      */
     public function sendNextStep(array $record, $node_id = null)
     {
@@ -155,8 +164,9 @@ abstract class Node
     }
 
     /**
-     * link output together
-     * @param object $chain
+     * Link output together.
+     * @param \Giift\Etl\Chain $chain Chain which holds all nodes.
+     * @return void
      */
     public function link(\Giift\Etl\Chain &$chain)
     {

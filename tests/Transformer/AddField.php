@@ -14,6 +14,9 @@ class AddField extends \PHPUnit_Framework_TestCase
      */
     protected $node_loader;
 
+    /**
+     * @return void
+     */
     protected function setUp()
     {
         parent::setUp();
@@ -28,6 +31,7 @@ class AddField extends \PHPUnit_Framework_TestCase
      * assertNotEmpty
      * assertArrayHasKey
      * assertContains
+     * @return void
      */
     public function testWithFields()
     {
@@ -54,6 +58,7 @@ class AddField extends \PHPUnit_Framework_TestCase
      * Empty record array
      * assertNotNull
      * assertNotEmpty
+     * @return void
      */
     public function testEmptyfields()
     {
@@ -75,6 +80,7 @@ class AddField extends \PHPUnit_Framework_TestCase
      * Test with both empty array
      * assertNotNull
      * assertNotEmpty
+     * @return void
      */
     public function testEmptyArray()
     {

@@ -33,7 +33,7 @@ class Csv extends \Giift\Etl\Node
     /**
      * constructor
      *
-     * @param array $config
+     * @param array $config Fields array from config.
      */
     public function __construct(array $config = array())
     {
@@ -46,6 +46,7 @@ class Csv extends \Giift\Etl\Node
     /**
      * Function extract
      * Open file, read file, extract line by line of the file
+     * @return array
      */
     public function extract()
     {
@@ -119,9 +120,11 @@ class Csv extends \Giift\Etl\Node
 
     /**
      * @see \Etl\Node::processRecord()
-     * @param array $record, single array from single line of csv
+     * @param array $record Single array from single line of csv.
+     * @return string
      */
     public function processRecord(array $record)
     {
+        return '';
     }
 }

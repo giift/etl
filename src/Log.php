@@ -11,6 +11,9 @@ class Log
 {
     private static $instance_ = null;
 
+    /**
+     * @return \Psr\Log\LoggerInterface
+     */
     public static function instance()
     {
         if (is_null(self::$instance_)) {
@@ -21,7 +24,12 @@ class Log
         return self::$instance_;
     }
 
-    public static function setInstance(\Monolog\Logger $logger)
+    /**
+     * Override the default logger with an external one.
+     * @param \Psr\Log\LoggerInterface $logger External instance of logger.
+     * @return void
+     */
+    public static function setInstance(\Psr\Log\LoggerInterface $logger)
     {
         self::$instance_ = $logger;
     }

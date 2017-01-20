@@ -14,6 +14,9 @@ class Filter extends \PHPUnit_Framework_TestCase
      */
     protected $config;
 
+    /**
+     * @return void
+     */
     protected function setUp()
     {
         parent::setUp();
@@ -26,11 +29,18 @@ class Filter extends \PHPUnit_Framework_TestCase
      * assertNotNull
      * assertNotEmpty
      * assertArrayHasKey
+     * @return void
      */
     public function testWithFields()
     {
-        $config = array('fields' => array ('number' => array('points'), 'email' => array('email')));
-        $record = array('points'=>12354, 'email'=>'giif@giift.com');
+        $config = array(
+            'fields' => array(
+                'number' => array('points'),
+                'email' => array('email'),
+                'url' =>array('url')
+            )
+        );
+        $record = array('points'=>12354, 'email'=>'giif@giift.com', 'url'=>'http://giift.com');
 
         $node_filter = new \Giift\Etl\Transformer\Filter($config);
         $node_filter->addOutput($this->node_loader);
@@ -48,6 +58,7 @@ class Filter extends \PHPUnit_Framework_TestCase
      * assertNotNull
      * assertNotEmpty
      * assertArrayHasKey
+     * @return void
      */
     public function testEmptyFields()
     {
@@ -69,6 +80,7 @@ class Filter extends \PHPUnit_Framework_TestCase
      * test with empty file and fields
      * assertNotNull result array
      * assertEmpty result array
+     * @return void
      */
     public function testEmptyRecord()
     {
@@ -92,6 +104,7 @@ class Filter extends \PHPUnit_Framework_TestCase
      * Test empty both array
      * assertNotNull
      * assertEmpty
+     * @return void
      */
     public function testEmptyArray()
     {

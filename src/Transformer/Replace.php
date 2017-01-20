@@ -19,9 +19,9 @@ class Replace extends \Giift\Etl\Node
     private $subject_field = array();
 
     /**
-     * constructor
+     * Constructor
      *
-     * @param array $config, fields array from config
+     * @param array $config Fields array from config.
      */
     public function __construct(array $config = array())
     {
@@ -35,7 +35,8 @@ class Replace extends \Giift\Etl\Node
      * proceed next step
      *
      * @see \Etl\Node::processRecord()
-     * @param array $record, single array from single line of the file
+     * @param array $record Single array from single line of the file.
+     * @return string
      */
     public function processRecord(array $record)
     {
@@ -52,8 +53,6 @@ class Replace extends \Giift\Etl\Node
             }
         }
 
-        $res = $this->sendNextStep($record);
-
-        return $res;
+        return $this->sendNextStep($record);
     }
 }

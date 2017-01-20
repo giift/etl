@@ -34,7 +34,7 @@ class Chain
     /**
      * Function forge, start of the chain building call
      *
-     * @param array $config, whole array found in config\etl.php
+     * @param array $config Whole array found in config\etl.php.
      * @return \Giift\Etl\Chain
      */
     public static function forge(array $config)
@@ -51,9 +51,9 @@ class Chain
     /**
      * Function init, create node array and init node
      *
-     * @param array $nodes_config
-     * @param string $init_node_id, first class to init
-     * @return node chain
+     * @param array  $nodes_config Array representation of the chain.
+     * @param string $init_node_id Entry point node of the chain.
+     * @return void
      */
     protected function init(array $nodes_config, $init_node_id)
     {
@@ -75,9 +75,9 @@ class Chain
     }
 
     /**
-     * Get node
-     * @param string $id
-     * @return array:
+     * Get node from its id.
+     * @param string $id Id of the node.
+     * @return array|null
      */
     public function getNode($id)
     {
@@ -87,6 +87,7 @@ class Chain
     /**
      * Function run, start run the chain
      * extract() is the extract function in extractor
+     * @return string
      */
     public function run()
     {

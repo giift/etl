@@ -14,6 +14,9 @@ class Replace extends \PHPUnit_Framework_TestCase
      */
     protected $node_loader;
 
+    /**
+     * @return void
+     */
     protected function setUp()
     {
         parent::setUp();
@@ -27,6 +30,7 @@ class Replace extends \PHPUnit_Framework_TestCase
      * assertNotEmpty
      * assertArrayHasKey
      * assertEquals
+     * @return void
      */
     public function testWithFileFields()
     {
@@ -62,6 +66,7 @@ class Replace extends \PHPUnit_Framework_TestCase
      * assertNotNull
      * assertNotEmpty
      * assertNotEquals
+     * @return void
      */
     public function testEmptyField()
     {
@@ -90,6 +95,7 @@ class Replace extends \PHPUnit_Framework_TestCase
      * Test withfields array and record empty
      * assertNotNull
      * assertEmpty
+     * @return void
      */
     public function testEmptyRecord()
     {
@@ -111,6 +117,7 @@ class Replace extends \PHPUnit_Framework_TestCase
      * Test with empty both
      * assertNotNull
      * assertEmpty
+     * @return void
      */
     public function testBothEmpty()
     {

@@ -8,6 +8,9 @@ namespace Test\Giift\Etl\Transformer;
  */
 class Mapping extends \PHPUnit_Framework_TestCase
 {
+    /**
+     * @return void
+     */
     protected function setUp()
     {
         parent::setUp();
@@ -20,6 +23,7 @@ class Mapping extends \PHPUnit_Framework_TestCase
      * assertNotNull
      * assertNotEmpty
      * assertArrayHasKey
+     * @return void
      */
     public function testWithMap()
     {
@@ -45,6 +49,7 @@ class Mapping extends \PHPUnit_Framework_TestCase
      * Test with empty map fields array and record not empty
      * assertNotNull
      * assertEmpty
+     * @return void
      */
     public function testEmptyMap()
     {
@@ -66,6 +71,7 @@ class Mapping extends \PHPUnit_Framework_TestCase
      * Test with fields and record empty
      * assertNotNull
      * assertEmpty
+     * @return void
      */
     public function testEmptyRecord()
     {
@@ -87,6 +93,7 @@ class Mapping extends \PHPUnit_Framework_TestCase
      * Test with empty fields array and record empty
      * assertNotNull
      * assertEmpty
+     * @return void
      */
     public function testEmptyBoth()
     {
