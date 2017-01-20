@@ -6,15 +6,11 @@ namespace Test\Giift\Etl;
  */
 class Chain extends \PHPUnit_Framework_TestCase
 {
-    protected function setUp()
-    {
-        parent::setUp();
-    }
-
     /**
      * Test chain of transformer
      * Verify node being initialize
      * Verify output node is correct class
+     * @return void
      */
     public function testChain()
     {
@@ -109,6 +105,7 @@ class Chain extends \PHPUnit_Framework_TestCase
      * Test chain not broken
      * Verify node being initialize
      * Verify output node is correct class
+     * @return void
      */
     public function testCrazyNode()
     {
@@ -175,6 +172,7 @@ class Chain extends \PHPUnit_Framework_TestCase
      * Test chain not broken, multi link
      * Verify node being initialize
      * Verify output node is correct class
+     * @return void
      */
     public function testCrazyNode2()
     {
@@ -263,6 +261,7 @@ class Chain extends \PHPUnit_Framework_TestCase
      * Test chain not broken with empty node in chain
      * Verify node being initialize
      * Verify output node is correct class
+     * @return void
      */
     public function testEmptyNode()
     {

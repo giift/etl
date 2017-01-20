@@ -12,23 +12,26 @@ class Debug extends \Giift\Etl\Node
 
     /**
      * constructor
+     * @param array $config Fields array from config.
      */
-    public function __construct(array $config = null)
+    public function __construct(array $config = array())
     {
+        parent::__construct($config);
     }
 
     /**
      * Output the result, save to static array
      *
      * @see \Etl\Node::processRecord()
-     * @param array $record,
-     *          single array from single line of csv
+     * @param array $record Single array from single line of csv.
+     * @return string
      */
     public function processRecord(array $record)
     {
         if (!empty($record)) {
             $this->result[] = $record;
         }
+        return '';
     }
 
     /**

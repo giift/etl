@@ -19,8 +19,7 @@ class AddField extends \Giift\Etl\Node
     /**
      * constructor
      *
-     * @param array $config,
-     *          fields array from config
+     * @param array $config Fields array from config.
      */
     public function __construct(array $config = array())
     {
@@ -32,8 +31,8 @@ class AddField extends \Giift\Etl\Node
      * proceed next step
      *
      * @see \Etl\Node::processRecord()
-     * @param array $record,
-     *          single array from single line of the file
+     * @param array $record Single array from single line of the file.
+     * @return string
      */
     public function processRecord(array $record)
     {

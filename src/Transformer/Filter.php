@@ -19,8 +19,7 @@ class Filter extends \Giift\Etl\Node
     /**
      * constructor
      *
-     * @param array $config,
-     *          fields array from config
+     * @param array $config Fields array from config.
      */
     public function __construct(array $config = array())
     {
@@ -32,7 +31,8 @@ class Filter extends \Giift\Etl\Node
      * proceed next step
      *
      * @see \Etl\Node::processRecord()
-     * @param array $record, single array from single line of the file
+     * @param array $record Single array from single line of the file.
+     * @return string
      */
     public function processRecord(array $record)
     {
@@ -42,56 +42,56 @@ class Filter extends \Giift\Etl\Node
                     if (!empty($record [$field])) {
                         // call function base on key value, exp: filter_number
                         $fnc = 'filter_' . $key;
-                        $record [$field] = self::$fnc($record [$field]);
+                        if (method_exists($this, $fnc)) {
+                            $record [$field] = self::$fnc($record [$field]);
+                        } else {
+                            \Giift\Etl\Log::instance()->error("Filter $key does not exists");
+                        }
                     }
                 }
             }
         }
 
-        $res = $this->sendNextStep($record);
-
-        return $res;
+        return $this->sendNextStep($record);
     }
 
     /**
      * Filter weird characters left only clean number
      *
-     * @param string $value
+     * @param string $value Value to be filtered.
      * @return string
      */
-    public static function filter_number($value)
+    public static function filterNumber($value)
     {
         return preg_replace('/[^0-9]/', '', $value);
     }
 
     /**
      * Filter email
-     * @param string $value
+     * @param string $value Value to be filtered.
      * @return string
      */
-    public static function filter_email($value)
+    public static function filterEmail($value)
     {
         if (filter_var($value, FILTER_VALIDATE_EMAIL)) {
             return $value;
-        } else {
-            \Giift\Etl\Log::instance()->error('ETL | email', 'Removed bad email: '.$value);
-            return '';
         }
+        \Giift\Etl\Log::instance()->notice('ETL | email', 'Removed bad email: '.$value);
+        return '';
     }
 
     /**
      * Filter URL
-     * @param string $value
+     * @param string $value Value to be filtered.
      * @return string
      */
-    public static function filter_url($value)
+    public static function filterUrl($value)
     {
         $value = filter_var($value, FILTER_SANITIZE_URL);
         if (!filter_var($value, FILTER_VALIDATE_URL) === false) {
             return $value;
-        } else {
-            \Giift\Etl\Log::instance()->error('ETL | url', 'Removed bad url: '.$value);
-            return '';
         }
+        \Giift\Etl\Log::instance()->notice('ETL | url', 'Removed bad url: '.$value);
+        return '';
     }
 }

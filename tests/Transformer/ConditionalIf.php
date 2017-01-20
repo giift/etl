@@ -14,6 +14,9 @@ class ConditionalIf extends \PHPUnit_Framework_TestCase
      */
     protected $node_loader;
 
+    /**
+     * @return void
+     */
     protected function setUp()
     {
         parent::setUp();
@@ -25,6 +28,7 @@ class ConditionalIf extends \PHPUnit_Framework_TestCase
      * Test empty record
      * assertNotNull
      * assertEmpty
+     * @return void
      */
     public function testEmptyVar()
     {
@@ -50,6 +54,7 @@ class ConditionalIf extends \PHPUnit_Framework_TestCase
      * Test empty statement
      * assertNotNull
      * assertEmpty
+     * @return void
      */
     public function testEmptyStatement()
     {
@@ -71,6 +76,7 @@ class ConditionalIf extends \PHPUnit_Framework_TestCase
      * test operator ==
      * assertNotNull
      * assertNotEmpty
+     * @return void
      */
     public function testOperatorA()
     {
@@ -96,6 +102,7 @@ class ConditionalIf extends \PHPUnit_Framework_TestCase
      * test operator !=
      * assertNotNull
      * assertNotEmpty
+     * @return void
      */
     public function testOperatorb()
     {
@@ -121,6 +128,7 @@ class ConditionalIf extends \PHPUnit_Framework_TestCase
      * test operator ===
      * assertNotNull
      * assertNotEmpty
+     * @return void
      */
     public function testOperatorc()
     {
@@ -146,6 +154,7 @@ class ConditionalIf extends \PHPUnit_Framework_TestCase
      * test operator <>
      * assertNotNull
      * assertNotEmpty
+     * @return void
      */
     public function testOperatord()
     {
@@ -171,6 +180,7 @@ class ConditionalIf extends \PHPUnit_Framework_TestCase
      * test operator !==
      * assertNotNull
      * assertNotEmpty
+     * @return void
      */
     public function testOperatore()
     {
@@ -196,6 +206,7 @@ class ConditionalIf extends \PHPUnit_Framework_TestCase
      * test operator <
      * assertNotNull
      * assertNotEmpty
+     * @return void
      */
     public function testOperatorf()
     {
@@ -221,6 +232,7 @@ class ConditionalIf extends \PHPUnit_Framework_TestCase
      * test operator >
      * assertNotNull
      * assertNotEmpty
+     * @return void
      */
     public function testOperatorg()
     {
@@ -246,6 +258,7 @@ class ConditionalIf extends \PHPUnit_Framework_TestCase
      * test operator <=
      * assertNotNull
      * assertNotEmpty
+     * @return void
      */
     public function testOperatorh()
     {
@@ -271,6 +284,7 @@ class ConditionalIf extends \PHPUnit_Framework_TestCase
      * test operator >=
      * assertNotNull
      * assertNotEmpty
+     * @return void
      */
     public function testOperatori()
     {

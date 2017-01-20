@@ -19,7 +19,7 @@ class ConditionalIf extends \Giift\Etl\Node
     /**
      * constructor
      *
-     * @param array $config, fields array from config
+     * @param array $config Fields array from config.
      */
     public function __construct(array $config = array())
     {
@@ -31,7 +31,8 @@ class ConditionalIf extends \Giift\Etl\Node
      * proceed next step
      *
      * @see \Etl\Node::processRecord()
-     * @param array $record
+     * @param array $record Single array from single line of csv.
+     * @return string
      */
     public function processRecord(array $record)
     {

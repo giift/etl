@@ -19,7 +19,7 @@ class Map extends \Giift\Etl\Node
     /**
      * constructor
      *
-     * @param array $config
+     * @param array $config Fields array from config.
      */
     public function __construct(array $config = array())
     {
@@ -31,7 +31,8 @@ class Map extends \Giift\Etl\Node
      * send data next step
      *
      * @see \Etl\Node::processRecord()
-     * @param array $record, single array from single line of csv
+     * @param array $record Single array from single line of csv.
+     * @return string
      */
     public function processRecord(array $record)
     {
@@ -42,8 +43,6 @@ class Map extends \Giift\Etl\Node
             $data = array_combine($this->map, $record);
         }
 
-        $res = $this->sendNextStep($data);
-
-        return $res;
+        return $this->sendNextStep($data);
     }
 }

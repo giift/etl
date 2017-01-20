@@ -97,7 +97,7 @@
         <exec executable="${toolsdir}phpcs">
             <arg value="--report=checkstyle" />
             <arg value="--report-file=${basedir}/build/logs/checkstyle.xml" />
-            <arg value="--standard=PSR2" />
+            <arg value="--standard=${basedir}/build/phpcs.xml" />
             <arg value="--extensions=php" />
             <arg path="${basedir}/src" />
             <arg path="${basedir}/tests" />
@@ -106,7 +106,7 @@
 
     <target name="phpcs" depends="prepare" description="Find coding standard violations using PHP_CodeSniffer and log result in XML format. Intended for usage within a continuous integration environment.">
         <exec executable="${toolsdir}phpcs">
-            <arg value="--standard=PSR2" />
+            <arg value="--standard=${basedir}/build/phpcs.xml" />
             <arg value="--extensions=php" />
             <arg path="${basedir}/src" />
             <arg path="${basedir}/tests" />
@@ -138,7 +138,7 @@
             <arg path="${basedir}/build/phpunit.xml"/>
         </exec>
     </target>
-    
+
     <target name="sami" depends="prepare" description="create doc with Sami">
         <exec executable="${toolsdir}sami.php" failonerror="false">
             <arg value="update"/>

@@ -14,6 +14,9 @@ class Csv extends \PHPUnit_Framework_TestCase
      */
     protected $node_loader;
 
+    /**
+     * @return void
+     */
     protected function setUp()
     {
         parent::setUp();
@@ -25,6 +28,7 @@ class Csv extends \PHPUnit_Framework_TestCase
      * Test with file
      * assertNotNull
      * assertNotEmpty
+     * @return void
      */
     public function testWithFile()
     {
@@ -49,6 +53,7 @@ class Csv extends \PHPUnit_Framework_TestCase
      * Test with empty file
      * assertNotNull
      * assertEmpty
+     * @return void
      */
     public function testWithEmptyFile()
     {
@@ -73,6 +78,7 @@ class Csv extends \PHPUnit_Framework_TestCase
      * Test with file, empty skip line
      * assertNotNull
      * assertNotEmpty
+     * @return void
      */
     public function testEmptySkipLines()
     {
@@ -97,6 +103,7 @@ class Csv extends \PHPUnit_Framework_TestCase
      * Test with file, empty header line
      * assertNotNull
      * assertNotEmpty
+     * @return void
      */
     public function testEmptyHeaderLines()
     {
@@ -121,6 +128,7 @@ class Csv extends \PHPUnit_Framework_TestCase
      * Test with file, empty both line
      * assertNotNull
      * assertNotEmpty
+     * @return void
      */
     public function testEmptyBoth()
     {
