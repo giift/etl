@@ -41,7 +41,7 @@ class Filter extends \Giift\Etl\Node
                 foreach ($field_arr as $field) {
                     if (!empty($record [$field])) {
                         // call function base on key value, exp: filter_number
-                        $fnc = 'filter_' . $key;
+                        $fnc = 'filter' . ucfirst($key);
                         if (method_exists($this, $fnc)) {
                             $record [$field] = self::$fnc($record [$field]);
                         } else {

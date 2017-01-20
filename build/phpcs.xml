@@ -1,0 +1,10 @@
+<?xml version="1.0"?>
+<ruleset name="Giift">
+ <description>The Giift.com coding standard</description>
+ <!-- Include the whole PSR2 -->
+ <rule ref="PSR2"/>
+
+ <!-- Make sure that functions are properly documented -->
+ <rule ref="MySource.Commenting.FunctionComment"/>
+
+</ruleset>
