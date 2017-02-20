@@ -45,7 +45,7 @@ class Filter extends \Giift\Etl\Node
                         if (method_exists($this, $fnc)) {
                             $record [$field] = self::$fnc($record [$field]);
                         } else {
-                            \Giift\Etl\Log::instance()->error("Filter $key does not exists");
+                            \Giift\Etl\Log::instance()->error("Filter $key does not exist");
                         }
                     }
                 }
@@ -76,7 +76,7 @@ class Filter extends \Giift\Etl\Node
         if (filter_var($value, FILTER_VALIDATE_EMAIL)) {
             return $value;
         }
-        \Giift\Etl\Log::instance()->notice('ETL | email', 'Removed bad email: '.$value);
+        \Giift\Etl\Log::instance()->notice('ETL | email - Removed bad email: '.$value);
         return '';
     }
 
@@ -91,7 +91,7 @@ class Filter extends \Giift\Etl\Node
         if (!filter_var($value, FILTER_VALIDATE_URL) === false) {
             return $value;
         }
-        \Giift\Etl\Log::instance()->notice('ETL | url', 'Removed bad url: '.$value);
+        \Giift\Etl\Log::instance()->notice('ETL | url - Removed bad url: '.$value);
         return '';
     }
 }
